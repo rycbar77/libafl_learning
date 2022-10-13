@@ -1,5 +1,3 @@
-cargo:rerun-if-changed=build.rs
-cargo:rerun-if-changed=src/lib.rs
 cd goo; make clean
 make[1]: Entering directory '/home/rr/fuzzing-101-solution/exercise-1/xpdf/goo'
 rm -f GHash.o GList.o GString.o gmem.o gmempp.o gfile.o FixedPoint.o parseargs.o libGoo.a

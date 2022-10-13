@@ -614,9 +614,9 @@ configure:6638: $? = 0
 configure:6650: result: yes
 configure:6664: checking for fseek64
 configure:6721: /usr/local/bin/afl-clang-fast -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/conftest-a3fcae.o: in function `main':
+/usr/bin/ld: /tmp/conftest-bb4089.o: in function `main':
 conftest.c:(.text.main[main]+0x29): undefined reference to `fseek64'
-/usr/bin/ld: /tmp/conftest-a3fcae.o:(.data+0x0): undefined reference to `fseek64'
+/usr/bin/ld: /tmp/conftest-bb4089.o:(.data+0x0): undefined reference to `fseek64'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6727: $? = 1
 configure: failed program was:
@@ -685,9 +685,9 @@ configure: failed program was:
 configure:6752: result: no
 configure:6768: checking for ftell64
 configure:6825: /usr/local/bin/afl-clang-fast -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/conftest-14ba62.o: in function `main':
+/usr/bin/ld: /tmp/conftest-b137e3.o: in function `main':
 conftest.c:(.text.main[main]+0x29): undefined reference to `ftell64'
-/usr/bin/ld: /tmp/conftest-14ba62.o:(.data+0x0): undefined reference to `ftell64'
+/usr/bin/ld: /tmp/conftest-b137e3.o:(.data+0x0): undefined reference to `ftell64'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6831: $? = 1
 configure: failed program was:

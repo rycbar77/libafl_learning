@@ -2,8 +2,8 @@ use std::env;
 use std::process::Command;
 
 fn main(){
-    println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=src/lib.rs");
+    // println!("cargo:rerun-if-changed=build.rs");
+    // println!("cargo:rerun-if-changed=src/main.rs");
     let cwd = env::current_dir().unwrap().to_string_lossy().to_string();
     let xpdf_dir = format!("{}/xpdf", cwd);
 
