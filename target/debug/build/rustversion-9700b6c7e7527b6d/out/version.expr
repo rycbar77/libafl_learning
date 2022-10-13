@@ -4,8 +4,8 @@ crate::version::Version {
     channel: crate::version::Channel::Nightly(
         crate::date::Date {
             year: 2022,
-            month: 8,
-            day: 10,
+            month: 9,
+            day: 7,
         },
     ),
 }

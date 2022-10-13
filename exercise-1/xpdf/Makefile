@@ -10,7 +10,7 @@ SHELL = /bin/sh
 
 DESTDIR =
 
-prefix = /home/rr/fuzzing-101-solution/exercise-1/xpdf/install
+prefix = /home/rr/libafl_learning/exercise-1/xpdf/install
 exec_prefix = ${prefix}
 srcdir = .
 

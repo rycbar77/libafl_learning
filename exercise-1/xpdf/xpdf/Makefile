@@ -8,7 +8,7 @@
 
 SHELL = /bin/sh
 
-prefix = /home/rr/fuzzing-101-solution/exercise-1/xpdf/install
+prefix = /home/rr/libafl_learning/exercise-1/xpdf/install
 srcdir = .
 
 
@@ -26,7 +26,7 @@ LDFLAGS =
 T1LIBS = 
 FTLIBS = 
 
-XLIBS =   -lXt  -lXext   -lSM -lICE  -lX11 
+XLIBS =         -lX11 
 
 SPLASHLIBS = -L$(SPLASHLIBDIR) -lsplash
 

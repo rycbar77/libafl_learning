@@ -53,7 +53,7 @@
 /*
  * Full path for the system-wide xpdfrc file.
  */
-#define SYSTEM_XPDFRC "/home/rr/fuzzing-101-solution/exercise-1/xpdf/install/etc/xpdfrc"
+#define SYSTEM_XPDFRC "/home/rr/libafl_learning/exercise-1/xpdf/install/etc/xpdfrc"
 
 /*
  * Various include files and functions.
@@ -64,7 +64,7 @@
 /* #undef HAVE_NDIR_H */
 /* #undef HAVE_SYS_SELECT_H */
 /* #undef HAVE_SYS_BSDTYPES_H */
-#define HAVE_STRINGS_H 1
+/* #undef HAVE_STRINGS_H */
 /* #undef HAVE_BSTRING_H */
 #define HAVE_POPEN 1
 #define HAVE_MKSTEMP 1
@@ -75,7 +75,7 @@
 /* #undef _FILE_OFFSET_BITS */
 /* #undef _LARGE_FILES */
 /* #undef _LARGEFILE_SOURCE */
-#define HAVE_XTAPPSETEXITFLAG 1
+/* #undef HAVE_XTAPPSETEXITFLAG */
 
 /*
  * This is defined if using libXpm.

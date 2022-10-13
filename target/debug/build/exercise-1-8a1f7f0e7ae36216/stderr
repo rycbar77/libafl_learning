@@ -1,3 +1,4 @@
+configure: WARNING: Couldn't find X
 configure: WARNING: Couldn't find Motif
 configure: WARNING: Couldn't find FreeType
 configure: WARNING: -- You will be able to compile pdftops, pdftotext,
