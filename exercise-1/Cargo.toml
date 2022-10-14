@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 libafl = "0.8.2"
+nix = "0.24.2"

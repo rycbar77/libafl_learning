@@ -1,22 +1,19 @@
 use libafl::bolts::shmem::{ShMem, ShMemProvider, StdShMemProvider};
 use libafl::corpus::{InMemoryCorpus, OnDiskCorpus};
 use libafl::inputs::BytesInput;
-use libafl::inputs::Input;
 use libafl::observers::TimeObserver;
 use libafl::prelude::{
-    current_nanos, forkserver, havoc_mutations, setup_restarting_mgr_std, tuple_list, AsMutSlice,
-    AsSlice, ConstMapObserver, Corpus, EventConfig, EventRestarter, ForkserverExecutor,
-    HasTargetBytes, HitcountsMapObserver, MaxMapFeedback, MultiMonitor, StdRand,
-    StdScheduledMutator, TimeFeedback, TimeoutExecutor, TimeoutFeedback, TimeoutForkserverExecutor,
-    Tokens,
+    current_nanos, havoc_mutations, setup_restarting_mgr_std, tuple_list, AsMutSlice,
+    ConstMapObserver, Corpus, EventConfig, EventRestarter, ForkserverExecutor,
+    HitcountsMapObserver, MaxMapFeedback, MultiMonitor, StdRand, StdScheduledMutator, TimeFeedback,
+    TimeoutFeedback, TimeoutForkserverExecutor,
 };
 use libafl::schedulers::{IndexesLenTimeMinimizerScheduler, QueueScheduler};
 use libafl::stages::StdMutationalStage;
 use libafl::state::{HasCorpus, StdState};
 use libafl::Error;
-use libafl::{
-    executors, feedback_and, feedback_and_fast, feedback_or, schedulers, Fuzzer, StdFuzzer,
-};
+use libafl::{feedback_and_fast, feedback_or, Fuzzer, StdFuzzer};
+use nix::sys::signal::Signal;
 use std::path::PathBuf;
 use std::time::Duration;
 
@@ -44,8 +41,10 @@ pub fn main() {
         MaxMapFeedback::new_tracking(&edges_observer, true, false),
         TimeFeedback::new_with_observer(&time_observer)
     );
-    let mut objective =
-        feedback_and_fast!(TimeoutFeedback::new(), MaxMapFeedback::new(&edges_observer));
+    let mut objective = feedback_and_fast!(
+        TimeoutFeedback::new(),
+        MaxMapFeedback::<_, _, _, u8>::new(&edges_observer)
+    );
 
     let monitor = MultiMonitor::new(|s| {
         println!("{}", s);
@@ -78,19 +77,24 @@ pub fn main() {
     let scheduler = IndexesLenTimeMinimizerScheduler::new(QueueScheduler::new());
     let mut fuzzer = StdFuzzer::new(scheduler, feedback, objective);
 
-    let mut tokens = Tokens::new();
-    
+    // let mut tokens = Tokens::new();
+
     let forkserver = ForkserverExecutor::builder()
         .program("./xpdf/install/bin/pdftotext".to_string())
         .debug_child(true)
-        .shmem_provider(&mut shmem_provider)
-        .autotokens(&mut tokens)
-        .parse_afl_cmdline(vec!["@@" ,"./output"])
+        // .shmem_provider(&mut shmem_provider)
+        // .autotokens(&mut tokens)
+        .parse_afl_cmdline(&[String::from("@@")])
         .build(tuple_list!(time_observer, edges_observer))
         .unwrap();
 
-    let mut executor = TimeoutForkserverExecutor::new(forkserver, Duration::from_millis(5000))
-        .expect("failed to create the executor");
+    let mut executor = TimeoutForkserverExecutor::with_signal(
+        forkserver,
+        Duration::from_millis(5000),
+        "SIGKILL".parse::<Signal>().unwrap(),
+    )
+    .expect("failed to create the executor");
+
     if state.corpus().count() < 1 {
         state
             .load_initial_inputs(&mut fuzzer, &mut executor, &mut mgr, &corpus_dirs)
@@ -102,6 +106,8 @@ pub fn main() {
             });
         println!("imported {} inputs from disk.", state.corpus().count());
     }
+
+    // state.add_metadata(tokens);
 
     let mutator = StdScheduledMutator::new(havoc_mutations());
 
