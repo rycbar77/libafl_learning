@@ -1,0 +1,169 @@
+Summary: ASAN detected unknown-crash in exif_mnote_data_olympus_save after a WRITE leading to SIGABRT (si_signo=6) / SI_TKILL (si_code=-6)
+Command line: ./build/triager @@
+Testcase: ./solutions/7869ad5a2ce59150
+Crash bucket: 4a9f02cf2710933463bb311fb871f5a4
+
+Crashing thread backtrace:
+#0  0x00007ffff7d14a7c in __pthread_kill_implementation (/lib/x86_64-linux-gnu/libc.so.6)
+                       at ./nptl/pthread_kill.c:44
+
+#1  0x00007ffff7d14a7c in __pthread_kill_internal (/lib/x86_64-linux-gnu/libc.so.6)
+                       at ./nptl/pthread_kill.c:78
+
+#2  0x00007ffff7d14a7c in __GI___pthread_kill (/lib/x86_64-linux-gnu/libc.so.6)
+                       at ./nptl/pthread_kill.c:89
+
+#3  0x00007ffff7cc0476 in __GI_raise (/lib/x86_64-linux-gnu/libc.so.6)
+                       at ../sysdeps/posix/raise.c:26
+
+#4  0x00007ffff7ca67f3 in __GI_abort (/lib/x86_64-linux-gnu/libc.so.6)
+                       at ./stdlib/abort.c:79
+
+#5  0x0000555555674bb7 in __sanitizer::Abort() (/home/rr/libafl_learning/exercise-2/build/triager)
+#6  0x0000555555672a51 in __sanitizer::Die() (/home/rr/libafl_learning/exercise-2/build/triager)
+#7  0x0000555555654ee7 in __asan::ScopedInErrorReport::~ScopedInErrorReport() (/home/rr/libafl_learning/exercise-2/build/triager)
+#8  0x0000555555657d0f in __asan::ReportGenericError(unsigned long, unsigned long, unsigned long, unsigned long, bool, unsigned long, unsigned int, bool) (/home/rr/libafl_learning/exercise-2/build/triager)
+#9  0x000055555564feae in __asan_memset (/home/rr/libafl_learning/exercise-2/build/triager)
+#10 0x00005555556b1839 in exif_mnote_data_olympus_save (/home/rr/libafl_learning/exercise-2/build/triager)
+                        85: void exif_mnote_data_olympus_save(ne = (ExifMnoteData *)<optimized out>, buf = (unsigned char **)0x6040000007a0, buf_size = (unsigned int *)0x6040000007a8) {
+                       |||:
+                       |||: /* Local reference: unsigned int doff = <optimized out>; */
+                       |||: /* Local reference: unsigned int s = 805306368; */
+                       |||: /* Local reference: unsigned char ** buf = 0x6040000007a0; */
+                       186: 		} else {
+                       187: 			/* Most certainly damaged input file */
+                       188: 			memset (*buf + doff, 0, s);
+                       |||:
+                       ---: }
+                       at exif-mnote-data-olympus.c:188
+
+#11 0x0000555555692c61 in exif_data_save_data_entry (/home/rr/libafl_learning/exercise-2/build/triager)
+                       ???: void exif_data_save_data_entry(data = (ExifData *)0x6060000000e0, e = (ExifEntry *)0x604000000790, d = (unsigned char **)0x7fffffffdc50, ds = (unsigned int *)0x7fffffffdc40, offset = (unsigned int)4294956368) {
+                       |||:
+                       |||: /* Local reference: ExifEntry * e = 0x604000000790; */
+                       |||: /* Local reference: ExifData * data = 0x6060000000e0; */
+                       |||: /* Local reference: unsigned int * ds = 0x7fffffffdc40; */
+                       232: 			e->size = 0;
+                       233: 			exif_mnote_data_set_offset (data->priv->md, *ds - 6);
+                       234: 			exif_mnote_data_save (data->priv->md, &e->data, &e->size);
+                       |||:
+                       ---: }
+                       at exif-data.c:234
+
+#12 0x0000555555692c61 in exif_data_save_data_content (/home/rr/libafl_learning/exercise-2/build/triager)
+                       449: void exif_data_save_data_content(data = (ExifData *)<optimized out>, ifd = (ExifContent *)0x603000000160, d = (unsigned char **)<optimized out>, ds = (unsigned int *)<optimized out>, offset = (unsigned int)234) {
+                       |||:
+                       |||: /* Local reference: ExifIfd i = <optimized out>; */
+                       |||: /* Local reference: ExifContent * ifd = 0x603000000160; */
+                       |||: /* Local reference: unsigned int offset = 234; */
+                       |||: /* Local reference: unsigned int j = <optimized out>; */
+                       |||: /* Local reference: ExifData * data = <optimized out>; */
+                       |||: /* Local reference: unsigned char ** d = <optimized out>; */
+                       |||: /* Local reference: unsigned int * ds = <optimized out>; */
+                       514: 		  ifd->count, exif_ifd_get_name (i), offset);
+                       515: 	for (j = 0; j < ifd->count; j++)
+                       516: 		exif_data_save_data_entry (data, ifd->entries[j], d, ds, offset + 12 * j);
+                       |||:
+                       ---: }
+                       at exif-data.c:516
+
+#13 0x0000555555693cca in exif_data_save_data_content (/home/rr/libafl_learning/exercise-2/build/triager)
+                       449: void exif_data_save_data_content(data = (ExifData *)<optimized out>, ifd = (ExifContent *)0x6030000000a0, d = (unsigned char **)<optimized out>, ds = (unsigned int *)<optimized out>, offset = (unsigned int)<optimized out>) {
+                       |||:
+                       |||: /* Local reference: unsigned char ** d = <optimized out>; */
+                       |||: /* Local reference: unsigned int offset = <optimized out>; */
+                       |||: /* Local reference: ExifData * data = <optimized out>; */
+                       |||: /* Local reference: unsigned int * ds = <optimized out>; */
+                       538: 			exif_set_long  (*d + 6 + offset + 8, data->priv->order,
+                       539: 					*ds - 6);
+                       540: 			exif_data_save_data_content (data,
+                       |||:
+                       ---: }
+                       at exif-data.c:540
+
+#14 0x0000555555692179 in exif_data_save_data (/home/rr/libafl_learning/exercise-2/build/triager)
+                       875: void exif_data_save_data(data = (ExifData *)0x6060000000e0, d = (unsigned char **)0x7fffffffdc50, ds = (unsigned int *)0x7fffffffdc40) {
+                       |||:
+                       |||: /* Local reference: ExifData * data = 0x6060000000e0; */
+                       |||: /* Local reference: unsigned char ** d = 0x7fffffffdc50; */
+                       |||: /* Local reference: unsigned int * ds = 0x7fffffffdc40; */
+                       906: 	exif_log (data->priv->log, EXIF_LOG_CODE_DEBUG, "ExifData",
+                       907: 		  "Saving IFDs...");
+                       908: 	exif_data_save_data_content (data, data->ifd[EXIF_IFD_0], d, ds,
+                       |||:
+                       ---: }
+                       at exif-data.c:908
+
+#15 0x000055555568bb17 in LLVMFuzzerTestOneInput (/home/rr/libafl_learning/exercise-2/build/triager)
+                       64: int LLVMFuzzerTestOneInput(data = (const uint8_t *)0x620000000080 "\377\330\377\341\v\032Exif", size = (size_t)3497) {
+                       ||:
+                       ||: /* Local reference: unsigned char * xbuf = 0x0; */
+                       ||: /* Local reference: ExifData * d = 0x6060000000e0; */
+                       ||: /* Local reference: unsigned int xbuf_size = <optimized out>; */
+                       78: 
+                       79:     xbuf = NULL;
+                       80:     exif_data_save_data (d, &xbuf, &xbuf_size);
+                       ||:
+                       --: }
+                       at ../harness.c:80
+
+#16 0x000055555568bd50 in main (/home/rr/libafl_learning/exercise-2/build/triager)
+                        95: int main(argc = (int)<optimized out>, argv = (char **)<optimized out>) {
+                       |||:
+                       |||: /* Local reference: char * buffer = 0x620000000080 "\377\330\377\341\v\032Exif"; */
+                       |||: /* Local reference: struct stat st = {st_dev = 2080, st_ino = 112885, st_nlink = 1, st_mode = 33188, st_uid = 1000, st_gid = 1000, __pad0 = 0, st_rdev = 0, st_size = 3497, st_blksize = 4096, st_blocks = 8, st_atim = {tv_... */
+                       |||: /* Local reference: FILE * fd = 0x615000000080; */
+                       106:     fread(buffer, sizeof(char), st.st_size, fd);
+                       107: 
+                       108:     LLVMFuzzerTestOneInput(buffer, st.st_size);
+                       |||:
+                       ---: }
+                       at ../harness.c:108
+
+ASAN Report:
+=================================================================
+==18722==ERROR: AddressSanitizer: unknown-crash on address 0x800005efb9ea at pc 0x55555564fe8c bp 0x7fffffffd450 sp 0x7fffffffcc20
+WRITE of size 805306368 at 0x800005efb9ea thread T0
+    #0 0x55555564fe8b  (/home/rr/libafl_learning/exercise-2/build/triager+0xfbe8b) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #1 0x5555556b1838  (/home/rr/libafl_learning/exercise-2/build/triager+0x15d838) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #2 0x555555692c60  (/home/rr/libafl_learning/exercise-2/build/triager+0x13ec60) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #3 0x555555693cc9  (/home/rr/libafl_learning/exercise-2/build/triager+0x13fcc9) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #4 0x555555692178  (/home/rr/libafl_learning/exercise-2/build/triager+0x13e178) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #5 0x55555568bb16  (/home/rr/libafl_learning/exercise-2/build/triager+0x137b16) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #6 0x55555568bd4f  (/home/rr/libafl_learning/exercise-2/build/triager+0x137d4f) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+    #7 0x7ffff7ca7d8f  (/lib/x86_64-linux-gnu/libc.so.6+0x29d8f) (BuildId: 69389d485a9793dbe873f0ea2c93e02efaa9aa3d)
+    #8 0x7ffff7ca7e3f  (/lib/x86_64-linux-gnu/libc.so.6+0x29e3f) (BuildId: 69389d485a9793dbe873f0ea2c93e02efaa9aa3d)
+    #9 0x5555555cda14  (/home/rr/libafl_learning/exercise-2/build/triager+0x79a14) (BuildId: e157abbab50748d968434385f64da78122ff5045)
+
+Address 0x800005efb9ea is a wild pointer inside of access range of size 0x000030000000.
+SUMMARY: AddressSanitizer: unknown-crash (/home/rr/libafl_learning/exercise-2/build/triager+0xfbe8b) (BuildId: e157abbab50748d968434385f64da78122ff5045) 
+==18722==ABORTING
+
+Crash context:
+Execution stopped here ==> 0x00007ffff7d14a7c: mov    r13d,eax
+
+Register info:
+   rax - 0x0000000000000000 (0)
+   rbx - 0x00007ffff7c7b8c0 (140737350449344)
+   rcx - 0x00007ffff7d14a7c (140737351076476)
+   rdx - 0x0000000000000006 (6)
+   rsi - 0x0000000000004922 (18722)
+   rdi - 0x0000000000004922 (18722)
+   rbp - 0x0000000000004922 (0x4922)
+   rsp - 0x00007fffffffbc80 (0x7fffffffbc80)
+    r8 - 0x00007fffffffbd50 (140737488338256)
+    r9 - 0xbfffff00000fffff (-4611687117937967105)
+   r10 - 0x0000000000000008 (8)
+   r11 - 0x0000000000000246 (582)
+   r12 - 0x0000000000000006 (6)
+   r13 - 0x0000000000000016 (22)
+   r14 - 0x1000000000000000 (1152921504606846976)
+   r15 - 0x2000000000000000 (2305843009213693952)
+   rip - 0x00007ffff7d14a7c (0x7ffff7d14a7c <__GI___pthread_kill+300>)
+eflags - 0x00000246 ([ PF ZF IF ])
+    cs - 0x00000033 (51)
+    ss - 0x0000002b (43)
+    ds - 0x00000000 (0)
+    es - 0x00000000 (0)
+    fs - 0x00000000 (0)
+    gs - 0x00000000 (0)

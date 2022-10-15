@@ -1,0 +1,26 @@
+var exif_entry_8c =
+[
+    [ "_ExifEntryPrivate", "struct__ExifEntryPrivate.html", "struct__ExifEntryPrivate" ],
+    [ "CC", "exif-entry_8c.html#a5f858b14ba346cddedf077de96c32113", null ],
+    [ "CF", "exif-entry_8c.html#a85d1f7d2c821dc48e24a0032250d8dfa", null ],
+    [ "exif_data_get_log", "exif-entry_8c.html#ad5b86e68c3c96618a946a5c6fcd5f394", null ],
+    [ "exif_entry_alloc", "exif-entry_8c.html#a98d6b995e251f09b20036c0c9d66efdf", null ],
+    [ "exif_entry_dump", "exif-entry_8c.html#addd6fdf3f0e4bd8777aff249ebe25da5", null ],
+    [ "exif_entry_fix", "exif-entry_8c.html#aa19ef4321004b1ce44187c12ff4f78c6", null ],
+    [ "exif_entry_free", "exif-entry_8c.html#a2879215e3863186650d3f32eb63bbaf4", null ],
+    [ "exif_entry_get_value", "exif-entry_8c.html#afda0f9d242fd7db960778502414c9885", null ],
+    [ "exif_entry_initialize", "exif-entry_8c.html#ad7f9e3fd0fde760c332dfbef208589ed", null ],
+    [ "exif_entry_log", "exif-entry_8c.html#ac416e8326bd687f5da299d1b15a731bf", null ],
+    [ "exif_entry_new", "exif-entry_8c.html#a81d54ed31654fc76331ca493a2a35633", null ],
+    [ "exif_entry_new_mem", "exif-entry_8c.html#a67580bc5b16e6f2793f9a5e580569a7b", null ],
+    [ "exif_entry_realloc", "exif-entry_8c.html#aae1f97ae8c40280beacf254b450076a5", null ],
+    [ "exif_entry_ref", "exif-entry_8c.html#afd537c2d20109a1ee3923584e969d3d7", null ],
+    [ "exif_entry_unref", "exif-entry_8c.html#a82d5d923121488d847d341727cdd2ef4", null ],
+    [ "elem", "exif-entry_8c.html#a1606e6fb2a3d303dd30a344338ab4704", null ],
+    [ "index", "exif-entry_8c.html#a750b5d744c39a06bfb13e6eb010e35d0", null ],
+    [ "list", "exif-entry_8c.html#a9c04d038e19875c0eb05605cb0801672", null ],
+    [ "list2", "exif-entry_8c.html#a76d5f6e7b612c1a36167fd20156bd942", null ],
+    [ "strings", "exif-entry_8c.html#a60367cc58e7012df1915b9df1c468e20", null ],
+    [ "tag", "exif-entry_8c.html#a78f90c775fe0ce878f9d729c2a3a12b9", null ],
+    [ "values", "exif-entry_8c.html#a3e7e6d695eca93f838b1abb9256efd45", null ]
+];

@@ -1,0 +1,36 @@
+var mnote_pentax_tag_8h =
+[
+    [ "MnotePentaxTag", "mnote-pentax-tag_8h.html#ac858fb07fa10da388fbfcc11a32540eb", null ],
+    [ "_MnotePentaxTag", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639e", [
+      [ "MNOTE_PENTAX_TAG_MODE", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea2e34436ce94bdceaae34499dba3fa608", null ],
+      [ "MNOTE_PENTAX_TAG_QUALITY", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea538c9b7e4ce9dba71dd83161646581e0", null ],
+      [ "MNOTE_PENTAX_TAG_FOCUS", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea8a2b75bc0571732c6466c54da58ff131", null ],
+      [ "MNOTE_PENTAX_TAG_FLASH", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea9b6d897c68e1d6eb06a675a4e28847f1", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_05", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eab2d0384a1ef3dc968eaf4c218f7c1016", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_06", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea1e5b5602157cdffe594a264f93893475", null ],
+      [ "MNOTE_PENTAX_TAG_WHITE_BALANCE", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ead3fb7de5ca43432776059d164b06f834", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_08", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea469326236f57f682f057873ace5da4e9", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_09", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea6126b9b2fc020c4cab535948b305d25d", null ],
+      [ "MNOTE_PENTAX_TAG_ZOOM", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eaceca0ebafd31f5b72be9f67af43e0885", null ],
+      [ "MNOTE_PENTAX_TAG_SHARPNESS", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea464a029f834297ee1e4f048740475953", null ],
+      [ "MNOTE_PENTAX_TAG_CONTRAST", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea532be4f1f21009cd0b495d447a5091df", null ],
+      [ "MNOTE_PENTAX_TAG_SATURATION", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea76646f5899e18b6d277198ed09745bd3", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_14", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea99ef7721dfbdf955a821247bac5fd8b3", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_15", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea8767177dea36a11792c0dc501704bc09", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_16", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eacf76a1fcf08bb0a9e560aa2e69528cc0", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_17", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea34fbfd0e15bc98d862731804fc7d2296", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_18", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eaeea93fe6ac3cd23f093388c26e47d16b", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_19", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eae4283a742672f1b37bbefba07350a38a", null ],
+      [ "MNOTE_PENTAX_TAG_ISO_SPEED", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eacbb43ad48d4237adbbe24043a0889718", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_21", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea9526b17d1a1eabbe2e66890ac15ef58c", null ],
+      [ "MNOTE_PENTAX_TAG_COLOR", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eabe002abc0773ecfffacd807112ddecd7", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_24", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea1e19fcdc71f8ee4529d73acab2b7b4e1", null ],
+      [ "MNOTE_PENTAX_TAG_UNKNOWN_25", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eafa4cfaa4be1e55a9d71385fadb4ad790", null ],
+      [ "MNOTE_PENTAX_TAG_PRINTIM", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eae8287985cecc2fd848303b03b13ad069", null ],
+      [ "MNOTE_PENTAX_TAG_TZ_CITY", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639eaf33b51f959bcb067441e9b30c1df7e7f", null ],
+      [ "MNOTE_PENTAX_TAG_TZ_DST", "mnote-pentax-tag_8h.html#acd4e4c67fce607e4cf4d015ac1b5639ea52b061ae668350a3099d3a042402af79", null ]
+    ] ],
+    [ "mnote_pentax_tag_get_description", "mnote-pentax-tag_8h.html#a3e7a0f8b569e577a69c3ccaaa578b9df", null ],
+    [ "mnote_pentax_tag_get_name", "mnote-pentax-tag_8h.html#af0b6a1a242182b5ea4f84f488ee4edfd", null ],
+    [ "mnote_pentax_tag_get_title", "mnote-pentax-tag_8h.html#a9e33435b24ddb04959315afd1a2df8db", null ]
+];

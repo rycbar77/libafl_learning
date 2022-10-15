@@ -3,6 +3,7 @@
 members = [
 "exercise-1",
 "exercise-1-fast",
+"exercise-2"
 ]
 
 [profile.release]

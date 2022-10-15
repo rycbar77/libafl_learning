@@ -27,7 +27,7 @@ hostinfo               = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /home/rr/.vscode-server/bin/129500ee4c8ab7263461ffe327268ba56b9f210d/bin/remote-cli
+PATH: /home/rr/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/bin/remote-cli
 PATH: /home/rr/.cargo/bin
 PATH: /usr/local/sbin
 PATH: /usr/local/bin
@@ -616,9 +616,9 @@ configure:6638: $? = 0
 configure:6650: result: yes
 configure:6664: checking for fseek64
 configure:6721: /usr/local/bin/afl-clang-fast -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/conftest-2fb22b.o: in function `main':
+/usr/bin/ld: /tmp/conftest-e868c0.o: in function `main':
 conftest.c:(.text.main[main]+0x29): undefined reference to `fseek64'
-/usr/bin/ld: /tmp/conftest-2fb22b.o:(.data+0x0): undefined reference to `fseek64'
+/usr/bin/ld: /tmp/conftest-e868c0.o:(.data+0x0): undefined reference to `fseek64'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6727: $? = 1
 configure: failed program was:
@@ -688,9 +688,9 @@ configure: failed program was:
 configure:6752: result: no
 configure:6768: checking for ftell64
 configure:6825: /usr/local/bin/afl-clang-fast -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/conftest-0893f8.o: in function `main':
+/usr/bin/ld: /tmp/conftest-1c1d7d.o: in function `main':
 conftest.c:(.text.main[main]+0x29): undefined reference to `ftell64'
-/usr/bin/ld: /tmp/conftest-0893f8.o:(.data+0x0): undefined reference to `ftell64'
+/usr/bin/ld: /tmp/conftest-1c1d7d.o:(.data+0x0): undefined reference to `ftell64'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:6831: $? = 1
 configure: failed program was:

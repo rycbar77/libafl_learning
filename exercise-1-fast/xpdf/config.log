@@ -27,6 +27,7 @@ hostinfo               = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /home/rr/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/bin/remote-cli
 PATH: /home/rr/.cargo/bin
 PATH: /usr/local/sbin
 PATH: /usr/local/bin

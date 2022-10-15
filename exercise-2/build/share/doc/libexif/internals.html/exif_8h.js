@@ -1,0 +1,28 @@
+var exif_8h =
+[
+    [ "exif_rational", "structexif__rational.html", "structexif__rational" ],
+    [ "exif_rec_data_t", "unionexif__rec__data__t.html", "unionexif__rec__data__t" ],
+    [ "exif_record", "structexif__record.html", "structexif__record" ],
+    [ "exif_data", "structexif__data.html", "structexif__data" ],
+    [ "EXIF_FMT_BYTE", "exif_8h.html#a324ad02d6301a69a7136ca6b75c5143c", null ],
+    [ "EXIF_FMT_COMPUTED", "exif_8h.html#a08ca1b42315f0ca87410c48f81bd6a46", null ],
+    [ "EXIF_FMT_DOUBLE", "exif_8h.html#a5c7e80d312c627e834244b6d7ac86af0", null ],
+    [ "EXIF_FMT_SBYTE", "exif_8h.html#abbc6c42c5f23efa2fd93eb6f4e28eef2", null ],
+    [ "EXIF_FMT_SINGLE", "exif_8h.html#ab808a323f5188b1dfffb85e39373181d", null ],
+    [ "EXIF_FMT_SLONG", "exif_8h.html#a70f8a090b44b8fbf09a2dc901fe8e658", null ],
+    [ "EXIF_FMT_SRATIONAL", "exif_8h.html#acd4c7f9be86bb12bf9916fd7ac375d1f", null ],
+    [ "EXIF_FMT_SSHORT", "exif_8h.html#a8e9dc29c6ef85c5ca592999bb9b49789", null ],
+    [ "EXIF_FMT_STRING", "exif_8h.html#abe916d1f0d66f89bbd28e7a6ab702e7e", null ],
+    [ "EXIF_FMT_ULONG", "exif_8h.html#ab86a8d8d8cae1229ce33b74b68a47e2f", null ],
+    [ "EXIF_FMT_UNDEFINED", "exif_8h.html#a4f0ddffa76637ee9848d1fd3be583a9e", null ],
+    [ "EXIF_FMT_URATIONAL", "exif_8h.html#afc26ea0770bf294ce7ef3aa7cdd73040", null ],
+    [ "EXIF_FMT_USHORT", "exif_8h.html#af631de71c7ef34901f69bf4b4d12b0a8", null ],
+    [ "exif_data_t", "exif_8h.html#a04e80196d72b231f2c16aaf091dec00c", null ],
+    [ "exif_rational_t", "exif_8h.html#a39f632dfb4fb8d482668558e22b98aab", null ],
+    [ "exif_record_t", "exif_8h.html#a2d5dc0f8c96229c50ce2d407ed8a9ac3", null ],
+    [ "exif_find_record", "exif_8h.html#a298d08027950c8b7e48506017fe71dde", null ],
+    [ "exif_free_data", "exif_8h.html#a668ddda01319c0d584fbcc317979af72", null ],
+    [ "exif_init", "exif_8h.html#a362be5d3a461e500b9a7d44153cb3f10", null ],
+    [ "exif_parse_fd", "exif_8h.html#a947c0651d1eea5c25bc209e29a783c00", null ],
+    [ "exif_parse_file", "exif_8h.html#ae388a3af4bec20a78755306cca4b03f1", null ]
+];

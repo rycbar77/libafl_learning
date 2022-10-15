@@ -5,8 +5,9 @@ use libafl::observers::TimeObserver;
 use libafl::prelude::{
     current_nanos, havoc_mutations, setup_restarting_mgr_std, tuple_list, AsMutSlice,
     ConstMapObserver, Corpus, EventConfig, EventRestarter, ForkserverExecutor,
-    HitcountsMapObserver, MaxMapFeedback, Monitor, MultiMonitor, SimpleEventManager, SimpleMonitor,
-    StdRand, StdScheduledMutator, TimeFeedback, TimeoutFeedback, TimeoutForkserverExecutor, Tokens, InProcessExecutor,
+    HitcountsMapObserver, InProcessExecutor, MaxMapFeedback, Monitor, MultiMonitor,
+    SimpleEventManager, SimpleMonitor, StdRand, StdScheduledMutator, TimeFeedback, TimeoutFeedback,
+    TimeoutForkserverExecutor, Tokens,
 };
 use libafl::schedulers::{IndexesLenTimeMinimizerScheduler, QueueScheduler};
 use libafl::stages::StdMutationalStage;
