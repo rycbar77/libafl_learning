@@ -1,0 +1,10 @@
+[package]
+name = "exercise-1-fast"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libafl = "0.8.1"
+nix = "0.24.2"

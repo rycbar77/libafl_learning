@@ -281,6 +281,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "exercise-1-fast"
+version = "0.1.0"
+dependencies = [
+ "libafl",
+ "nix",
+]
+
+[[package]]
 name = "getrandom"
 version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
