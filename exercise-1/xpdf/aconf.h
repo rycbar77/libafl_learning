@@ -64,7 +64,7 @@
 /* #undef HAVE_NDIR_H */
 /* #undef HAVE_SYS_SELECT_H */
 /* #undef HAVE_SYS_BSDTYPES_H */
-/* #undef HAVE_STRINGS_H */
+#define HAVE_STRINGS_H 1
 /* #undef HAVE_BSTRING_H */
 #define HAVE_POPEN 1
 #define HAVE_MKSTEMP 1
@@ -75,7 +75,7 @@
 /* #undef _FILE_OFFSET_BITS */
 /* #undef _LARGE_FILES */
 /* #undef _LARGEFILE_SOURCE */
-/* #undef HAVE_XTAPPSETEXITFLAG */
+#define HAVE_XTAPPSETEXITFLAG 1
 
 /*
  * This is defined if using libXpm.
